@@ -1,3 +1,19 @@
 <p>carbon-footprint works!</p>
+
+<p [ngClass]="{
+      'haute-distance': consommationPour100Km > 7,
+      'basse-distance': consommationPour100Km < 4
+    }">
+  {{consommationPour100Km}}</p>
+<p>{{distanceKm}}</p>
+<p>{{consommationTotalKm}}</p>
+<p *ngIf="consommationTotalKm > 7">
+  ⚠️ Attention, votre consommation est élevée
+</p>
+<p *ngIf="consommationTotalKm < 4">
+  ✅ Félicitations, votre consommation est faible
+</p>
+<button (click)="addDistance()" >Ajouter 100 km</button>
+
 <app-carbon-footprint-form />
 <app-carbon-footprint-result />
