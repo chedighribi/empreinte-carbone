@@ -1,3 +1,12 @@
+p, h2 {
+  font-family: Arial, sans-serif;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #333;
+}
 .haute-distance {
   color: red;
   font-weight: bold;
@@ -6,4 +15,34 @@
 .basse-distance {
   color: green;
   font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+button {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0.5rem 1rem 0;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #145ca0;
 }
