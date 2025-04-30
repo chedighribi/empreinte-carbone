@@ -19,12 +19,14 @@
   <tr>
     <th>Distance</th>
     <th>Consommation pour 100 kms</th>
+    <th>QuantiteCO2</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let voyage of voyages">
     <td>{{ voyage.distanceKm }} km</td>
     <td>{{ voyage.consommationPour100Km }} L</td>
+    <td>{{voyage.quantiteCO2}}</td>
   </tr>
   </tbody>
 </table>
