@@ -7,7 +7,7 @@ import {CarbonFootprintComponent} from "./features/carbon-footprint/carbon-footp
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, CarbonFootprintComponent],
+  imports: [HeaderComponent, FooterComponent, CarbonFootprintComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
