@@ -4,6 +4,7 @@ export interface Voyage {
   distanceKm: number;
   consommationPour100Km: number;
   quantiteCO2?: number;
+  date?: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,6 @@ export class CarbonFootprintComputeService {
       consommationPour100Km += voyage.consommationPour100Km;
       quantiteCO2 += voyage.quantiteCO2 ?? 0;
     }
-    return { distanceKm, consommationPour100Km, quantiteCO2 };
+    return { distanceKm, consommationPour100Km, quantiteCO2  };
   }
 }

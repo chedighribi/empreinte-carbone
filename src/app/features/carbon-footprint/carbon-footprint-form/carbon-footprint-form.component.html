@@ -1,1 +1,21 @@
-<p>carbon-footprint-form works!</p>
+<h1>Ajouter un voyage</h1>
+<form [formGroup]="form">
+  <label for="distanceKm">Distance (km)</label>
+  <input id="distanceKm" type="number" name="distanceKm" formControlName="distanceKm"/>
+  <p *ngIf="form.get('distanceKm')?.hasError('required')">
+    La distance est requise
+  </p>
+  <label for="consommationPour100Km">Consommation pour 100 km (L)</label>
+  <input id="consommationPour100Km" type="number" name="consommationPour100Km"
+         formControlName="consommationPour100Km" />
+  <p *ngIf="form.get('consommationPour100Km')?.hasError('required')">
+    Une consommation est requise
+  </p>
+  <label for="date">Date</label>
+  <input id="date" type="date" name="date" formControlName="date" />
+  <p *ngIf="form.get('date')?.hasError('required')">
+    La date est requise
+  </p>
+  <button type="button" (click)="addVoyage()" [disabled]="form.invalid">Ajouter un
+    voyage</button>
+</form>
