@@ -1,4 +1,11 @@
 <app-header />
 <h1>Bienvenue sur notre calculateur d'empreinte carbone !</h1>
-<button (click)="login()" routerLink="/summary">Accéder à mon profil</button>
+<form>
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" [(ngModel)]="username" />
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" [(ngModel)]="password" />
+  <button type="button" (click)="login()">Se connecter</button>
+</form>
+  <div *ngIf="error"> {{error}} </div>
 <app-footer />

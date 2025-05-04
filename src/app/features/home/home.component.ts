@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {CarbonFootprintComponent} from "../carbon-footprint/carbon-footprint.component";
 import {HeaderComponent} from "../../shared/components/header/header.component";
 import {FooterComponent} from "../../shared/components/footer/footer.component";
 import {UserService} from "../../service/user.service";
-import {RouterLink} from "@angular/router";
+import {Router} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -11,15 +12,28 @@ import {RouterLink} from "@angular/router";
   imports: [
     HeaderComponent,
     FooterComponent,
-    RouterLink
+    FormsModule,
+    NgIf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
- constructor(private userService: UserService) {
+  public username = "";
+  public password = "";
+  public error = "";
+ constructor(private userService: UserService, private router: Router) {
  }
  login() {
-   this.userService.login("name")
+   this.error = "";
+   if (this.username.length < 4) {
+     this.error = "Le username doit faire au moins 3 caractères";
+   } else if (this.password.length < 6) {
+     this.error = "Le mot de passe doit faire au moins 6 caractères"
+   } else {
+     this.userService.login("name")
+     this.router.navigate(["summary"]);
+   }
+
  }
 }
